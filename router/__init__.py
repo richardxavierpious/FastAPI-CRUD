@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
-
 from router.task2 import get_data
 def create_app():
     app = FastAPI()

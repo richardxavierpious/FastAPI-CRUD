@@ -1,7 +1,7 @@
 import asyncpg
 from typing import Optional
 
-DATABASE_URL = "postgresql://postgres:admin@localhost/Student"
+DATABASE_URL = "postgresql://postgres:admin@localhost/InBytes"
 
 async def get_connection():
     conn = await asyncpg.connect(DATABASE_URL)

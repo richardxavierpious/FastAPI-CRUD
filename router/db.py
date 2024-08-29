@@ -3,7 +3,6 @@ from typing import Optional
 
 DATABASE_URL = "postgresql://postgres:admin@localhost/Student"
 
-
 async def get_connection():
     conn = await asyncpg.connect(DATABASE_URL)
     return conn

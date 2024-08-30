@@ -1,0 +1,14 @@
+.nav{
+    display: flex;
+    justify-content: space-between;    
+}
+
+.user_pass{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+input{
+    margin-bottom: 10px;
+}

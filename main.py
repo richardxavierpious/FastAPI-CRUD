@@ -1,6 +1,6 @@
 import uvicorn
 
-from router import create_app
+from fast.router import create_app
 
 app = create_app()
 

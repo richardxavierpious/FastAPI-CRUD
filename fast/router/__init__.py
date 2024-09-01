@@ -2,11 +2,10 @@ from fastapi import FastAPI, Request
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse
 from starlette.templating import Jinja2Templates
-
-
-from router.login_methods import get_data
+from loginmethods import get_data
 
 templates = Jinja2Templates(directory="templates")
+
 def create_app():
     app = FastAPI()
     origins = ["*"]
@@ -20,12 +19,12 @@ def create_app():
 
     app.include_router(get_data)
 
-    @app.get("/")
-    def home():
+    @app.get("/", response_class=HTMLResponse)
+    async def home(request: Request):
         return "Hello World!"
 
-    @app.get("/home")
-    def homepage():
-        return templates.TemplateResponse('item.html')
+    @app.get("/home", response_class=HTMLResponse)
+    async def homepage(request: Request):
+        return templates.TemplateResponse('item.html', {"request": request})
 
     return app

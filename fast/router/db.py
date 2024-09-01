@@ -1,5 +1,6 @@
 import asyncpg
 from typing import Optional
+from models import session, Login2
 
 DATABASE_URL = "postgresql://postgres:admin@localhost/InBytes"
 
